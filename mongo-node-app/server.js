@@ -1,10 +1,15 @@
+require("dotenv").config();
 const express = require("express");
-const Product = require("./models/Product");
 
 const app = express();
-app.use(express.json()); // Permite recibir JSON en las solicitudes
+app.use(express.json());
+
+app.use("/auth", require("./routes/authRoutes"));
+app.use("/products", require("./routes/productRoutes"));
 
 const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Servidor en http://localhost:${PORT}`));
+
 
 app.post("/products", async (req, res) => {
     try {
@@ -64,4 +69,3 @@ app.post("/products", async (req, res) => {
   app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
   });
-  
