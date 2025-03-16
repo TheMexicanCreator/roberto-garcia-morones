@@ -9,7 +9,7 @@ const ShippingForm = ({ productId }) => {
   });
   const [quote, setQuote] = useState(null);
   const [shipment, setShipment] = useState(null);
-  const API_TOKEN = "TU_TOKEN_DE_ENVIA";  // Reemplaza con tu token real
+  const API_TOKEN = "8b1913e7a48721bb5a11cf57cfe32f3bb311ef5c83fc767b45350d609b3058da";  // Reemplaza con tu token real
 
   const handleQuote = async (e) => {
     e.preventDefault();
